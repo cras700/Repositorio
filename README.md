@@ -1,4 +1,6 @@
 # Repositorio
 Actividad de Portfolio de Daniel
 
-[Abrir Diario.md](Diario.md)
+[Diario.md](Diario.md)
+
+[Ejercicios.md](Ejercicios.md)
