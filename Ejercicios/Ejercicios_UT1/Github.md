@@ -1,4 +1,6 @@
 # GitHub: Funciones Principales (1)
+
+## Sergio Segoviano Gálvez (2)
  
 _GitHub_ es la plataforma que permite alojar proyectos usando **Git** como sistema de control de versiones.
  
