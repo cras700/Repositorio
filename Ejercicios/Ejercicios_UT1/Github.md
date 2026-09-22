@@ -56,3 +56,14 @@ Para trabajar sin afectar directamente a la rama principal se crea una nueva ram
 1. Entrar en **Settings** del repositorio.
 2. Ir al apartado **Collaborators**.
 3. Pulsar **Add people** y buscar el usuario.
+
+
+## Conclusión
+ 
+GitHub reúne en una sola herramienta todo lo necesario para gestionar el código fuente de un proyecto:  documentación del funcionamiento,revisión de cambios sufridos a lo largo de la vida del proyecto. Dominar sus funciones básicas —repositorio, commit, rama, pull request y colaboradores— es imprescindible para el uso diario si eres un programador.
+ 
+## Enlaces
+ 
+* Herramienta: [github.com](https://github.com)
+* Repositorio de la práctica: [github.com/cras700/pruebaGithub](https://github.com/cras700/pruebaGithub)
+* Documentación oficial: [docs.github.com](https://docs.github.com)
