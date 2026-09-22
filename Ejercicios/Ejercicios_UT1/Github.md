@@ -65,5 +65,5 @@ GitHub reúne en una sola herramienta todo lo necesario para gestionar el códig
 ## Enlaces
  
 * Herramienta: [github.com](https://github.com)
-* Repositorio de la práctica: [github.com/cras700/Repositorio](https://github.com/cras700/pruebaGithub)
+* Repositorio de la práctica: [github.com/cras700/Repositorio](https://github.com/cras700/Repositorio)
 * Documentación oficial: [docs.github.com](https://docs.github.com)
