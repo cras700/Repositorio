@@ -4,7 +4,7 @@
  
 `.env`, `*.key`, `*.pem`, `*.p12`, `credenciales*`, `secrets*`, `config.local.php`, `config/database.php`
  
-Estos archivos contienen contraseñas de bases de datos, claves de API o certificados. Si se suben al repositorio, cualquier persona con acceso a él (o todo el mundo, si es público) podría verlos y usarlos para acceder a nuestros servicios. Además, Git guarda el historial completo, por lo que aunque luego se borren seguirían visibles en commits anteriores.
+Dentro de este tipo de ficheros contienen contraseñas de bases de datos, claves de API o certificados. Si se suben al repositorio, cualquier persona con acceso a él (o todo el mundo, si es público) podría verlos y usarlos para acceder a nuestros servicios. Además, Git guarda el historial completo, por lo que aunque luego se borren seguirían visibles en commits anteriores.
  
 Se hace una excepción con `!.env.example`, porque solo contiene los nombres de las variables **sin valores reales** y sirve de guía para que otros configuren su propio entorno.
  
