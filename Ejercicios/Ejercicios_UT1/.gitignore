@@ -1,0 +1,64 @@
+# ==============================
+# Contraseñas y datos sensibles
+# ==============================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+credenciales*
+secrets*
+config.local.php
+config/database.php
+
+# ==============================
+# Configuraciones locales / IDE
+# ==============================
+.vscode/
+.idea/
+nbproject/private/
+*.code-workspace
+*.local
+
+# ==============================
+# Ficheros temporales y logs
+# ==============================
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+*.log
+logs/
+tmp/
+temp/
+cache/
+
+# ==============================
+# Binarios y compilados
+# ==============================
+*.class
+*.jar
+*.war
+*.exe
+*.dll
+*.so
+*.o
+build/
+dist/
+bin/
+out/
+
+# ==============================
+# Dependencias (se reinstalan)
+# ==============================
+vendor/
+node_modules/
+
+# ==============================
+# Archivos del sistema operativo
+# ==============================
+.DS_Store
+Thumbs.db
+desktop.ini
