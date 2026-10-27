@@ -103,7 +103,7 @@ Comandos ejecutados, tal como aparecen en el historial de la terminal:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-sudo install ca-certificates curl gnupg -y        # error: falta "apt"
+sudo apt install ca-certificates curl gnupg -y
 sudo apt install ca-certificates curl gnupg -y
 curl -fsSL https://get.docker.com | sudo sh
 curl -R -O https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
