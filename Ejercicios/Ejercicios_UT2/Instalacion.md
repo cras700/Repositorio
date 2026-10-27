@@ -164,7 +164,7 @@ docker --version
 
 Resultado: `Docker version 29.9.2, build a82e528`.
 
-![Versión de Docker instalada](capturas/05-docker-version.png)
+![Versión de Docker instalada](./Capturas/4.png)
 
 ### 3.6. Prueba con hello-world y permisos
 
@@ -175,7 +175,7 @@ $ docker run hello-word
 permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
 ```
 
-![Error de permisos al ejecutar Docker](capturas/06-error-permisos.png)
+![Error de permisos al ejecutar Docker](./Capturas/5.png)
 
 Es el comportamiento esperado tras la instalación. Docker funciona con el demonio **dockerd**, que se ejecuta como **root**, y el cliente `docker` se comunica con él a través del socket `/var/run/docker.sock`. Ese socket pertenece a `root` y al grupo `docker`, y el usuario `ubuntu-daw2daw` no pertenecía a ninguno de los dos. Esto afecta a todos los comandos de Docker (`run`, `search`, `ps`…).
 
@@ -202,7 +202,7 @@ docker run hello-world
 
 Descarga una imagen de prueba y crea un contenedor que muestra el mensaje *"Hello from Docker!"*, confirmando que Docker funciona correctamente.
 
-![Resultado de docker run hello-world](capturas/07-hello-world.png)
+![Resultado de docker run hello-world](./Capturas/holamundo.png)
 
 ---
 
@@ -220,9 +220,9 @@ docker search tomcat
 
 `docker search` consulta Docker Hub y lista las imágenes disponibles. Se eligen las oficiales, marcadas con `[OK]` en la columna **OFFICIAL**: `nginx` y `tomcat`.
 
-![Búsqueda de la imagen de Nginx](capturas/08-search-nginx.png)
+![Búsqueda de la imagen de Nginx](./Capturas/nginx.png)
 
-![Búsqueda de la imagen de Tomcat](capturas/09-search-tomcat.png)
+![Búsqueda de la imagen de Tomcat](./Capturas/tomcat.png)
 
 ### 4.2. Creación y arranque de los contenedores
 
@@ -239,7 +239,7 @@ docker run -d -p 8081:8080 --name appserver tomcat
 | `-p 8081:8080` | Redirige el puerto 8081 del anfitrión al 8080 del contenedor (Tomcat); se usa el 8081 porque el 8080 ya lo ocupa Nginx |
 | `--name` | Nombre del contenedor (`webserver` y `appserver`) |
 
-![Creación de los contenedores de Nginx y Tomcat](capturas/10-docker-run.png)
+![Creación de los contenedores de Nginx y Tomcat](./Capturas/arranque_de_los_contenedores.png)
 
 ### 4.3. Páginas de ejemplo de Tomcat
 
@@ -252,7 +252,7 @@ docker exec appserver cp -r webapps.dist/. webapps/
 - `docker exec appserver`: ejecuta un comando dentro del contenedor en marcha.
 - `cp -r webapps.dist/. webapps/`: copia todo el contenido de una carpeta a la otra.
 
-![Copia de las aplicaciones de ejemplo de Tomcat](capturas/11-docker-exec-tomcat.png)
+![Copia de las aplicaciones de ejemplo de Tomcat](./Capturas/copiar_las_imagenes_de_tomcat.png)
 
 ### 4.4. Verificación de los contenedores activos
 
