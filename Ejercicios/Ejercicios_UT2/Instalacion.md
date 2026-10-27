@@ -56,7 +56,7 @@ Se descarga la ISO de **Ubuntu 24.04 LTS** desde la página oficial de Ubuntu (`
 
 Con **red NAT** la VM sale a internet a través de la conexión del equipo anfitrión, sin ser visible directamente desde la red local.
 
-![Configuración de la máquina virtual en VirtualBox](capturas/01-configuracion-vm.png)
+![Configuración de la máquina virtual en VirtualBox](./capturas/1.png)
 
 ### 2.2. Instalación del sistema
 
