@@ -267,7 +267,7 @@ Muestra los dos contenedores en ejecución con estado **Up**:
 | appserver | tomcat | `catalina.sh run` | 0.0.0.0:8081 → 8080/tcp |
 | webserver | nginx | `/docker-entrypoint…` | 0.0.0.0:8080 → 80/tcp |
 
-![Contenedores activos con docker ps](capturas/12-docker-ps.png)
+![Contenedores activos con docker ps](./Capturas/estado_de_docker.png)
 
 ### 4.5. Pruebas desde el navegador
 
@@ -278,7 +278,7 @@ Muestra los dos contenedores en ejecución con estado **Up**:
 
 Ambos servidores funcionan correctamente.
 
-![Nginx y Tomcat funcionando en el navegador](capturas/13-navegador-nginx-tomcat.png)
+![Nginx y Tomcat funcionando en el navegador](./Capturas/Comprobación.png)
 
 ### 4.6. Otros comandos útiles
 
