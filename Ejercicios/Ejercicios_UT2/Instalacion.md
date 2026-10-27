@@ -89,11 +89,11 @@ VBoxClient --version
 
 Resultado: `7.2.10r174163`, que coincide con la versión de VirtualBox.
 
-![Versión de las Guest Additions](capturas/02-guest-additions-version.png)
+![Versión de las Guest Additions](./Capturas/Guest_Additions.png)
 
 ### 2.4. Escritorio tras la instalación
 
-![Escritorio de Ubuntu instalado](capturas/03-escritorio-ubuntu.png)
+![Escritorio de Ubuntu instalado](./Capturas/2.png)
 
 ---
 
@@ -110,7 +110,7 @@ curl -R -O https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 sudo apt-get update && sudo apt-get install ./docker-desktop-amd64.deb -y
 ```
 
-![Historial de comandos de instalación de Docker](capturas/04-comandos-instalacion-docker.png)
+![Historial de comandos de instalación de Docker](./Capturas/3.png)
 
 ### 3.1. Actualización del sistema
 
