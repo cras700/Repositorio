@@ -158,11 +158,11 @@ Búsqueda de las imágenes de Nginx y Tomcat:
 
 Arranque de los contenedores:
 
-![docker run de Nginx y Tomcat](capturas/arranque_de_los_contenedores.png.png)
+![docker run de Nginx y Tomcat](capturas/arranque_de_los_contenedores.png)
 
 Estado de los contenedores. `docker ps` muestra los que están activos en ese momento:
 
-![Salida de docker ps](capturas/estado_de_docker.png.png)
+![Salida de docker ps](capturas/estado_de_docker.png)
 
 ### Actividad 4: Pruebas desde el navegador
 
