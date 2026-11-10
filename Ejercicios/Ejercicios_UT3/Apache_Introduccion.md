@@ -123,7 +123,7 @@ curl -R -O https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 sudo apt-get update && sudo apt-get install ./docker-desktop-amd64.deb -y
 ```
 
-![Comandos de instalación de Docker](capturas/01_comandos_instalacion_docker.png)
+![Comandos de instalación de Docker](capturas/3.png)
 
 Para comprobar la instalación se consultó la versión y se ejecutó el contenedor de prueba:
 
@@ -132,9 +132,9 @@ docker --version
 docker run hello-world
 ```
 
-![Versión de Docker](capturas/02_docker_version.png)
+![Versión de Docker](capturas/4.png)
 
-![Resultado de docker run hello-world](capturas/03_docker_hello_world.png)
+![Resultado de docker run hello-world](capturas/holamundo.png)
 
 Además, se añadió el usuario de la máquina al grupo `docker` para poder ejecutar los comandos de Docker sin usar `sudo`.
 
@@ -152,17 +152,17 @@ docker ps
 
 Búsqueda de las imágenes de Nginx y Tomcat:
 
-![docker search nginx](capturas/04_docker_search_nginx.png)
+![docker search nginx](capturas/nginx.png)
 
-![docker search tomcat](capturas/05_docker_search_tomcat.png)
+![docker search tomcat](capturas/tomcat.png)
 
 Arranque de los contenedores:
 
-![docker run de Nginx y Tomcat](capturas/06_docker_run_contenedores.png)
+![docker run de Nginx y Tomcat](capturas/arranque_de_los_contenedores.png.png)
 
 Estado de los contenedores. `docker ps` muestra los que están activos en ese momento:
 
-![Salida de docker ps](capturas/07_docker_ps.png)
+![Salida de docker ps](capturas/estado_de_docker.png.png)
 
 ### Actividad 4: Pruebas desde el navegador
 
@@ -171,7 +171,7 @@ Se abrieron las dos direcciones en el navegador de la máquina virtual para comp
 - `http://localhost:8080`: página de bienvenida de Nginx.
 - `http://localhost:8081`: respuesta de Tomcat.
 
-![Nginx y Tomcat en el navegador](capturas/08_navegador_nginx_tomcat.png)
+![Nginx y Tomcat en el navegador](capturas/Comprobación.png)
 
 ### Actividad 5: Documentación
 
@@ -194,7 +194,7 @@ Además, el entorno sirve como base para el siguiente paso: instalar Apache, bie
 
 Este es el resultado final que debe obtenerse si los pasos de Docker se han hecho bien y se han arrancado los contenedores de Nginx y Tomcat:
 
-![Resultado final: Nginx y Tomcat funcionando](capturas/09_resultado_final.png)
+![Resultado final: Nginx y Tomcat funcionando](capturas/Comprobación.png)
 
 ## Conclusión
 
@@ -210,18 +210,4 @@ En esta práctica hemos repasado los pasos que hicimos de instalación de Apache
 - Netcraft. *July 2026 Web Server Survey*. <https://www.netcraft.com/blog/july-2026-web-server-survey> (consultado el 10/11/2026).
 - Linux Compatible. *Apache HTTP Server 2.4.70 Released*. <https://www.linuxcompatible.org/story/apache-http-server-2470-released-bugfix-update-supersedes-all-earlier-24x-versions/> (consultado el 10/11/2026).
 
-## Anexo: índice de capturas
 
-Todas las capturas están en la carpeta `capturas/`, junto a este fichero.
-
-| N.º | Fichero | Apartado | Qué muestra |
-| --- | --- | --- | --- |
-| 1 | `01_comandos_instalacion_docker.png` | Actividad 2 | Comandos de instalación de Docker y Docker Desktop |
-| 2 | `02_docker_version.png` | Actividad 2 | `docker --version` (Docker 29.9.2) |
-| 3 | `03_docker_hello_world.png` | Actividad 2 | Resultado de `docker run hello-world` |
-| 4 | `04_docker_search_nginx.png` | Actividad 3 | `docker search nginx` |
-| 5 | `05_docker_search_tomcat.png` | Actividad 3 | `docker search tomcat` |
-| 6 | `06_docker_run_contenedores.png` | Actividad 3 | Arranque de los contenedores de Nginx y Tomcat |
-| 7 | `07_docker_ps.png` | Actividad 3 | Contenedores activos con `docker ps` |
-| 8 | `08_navegador_nginx_tomcat.png` | Actividad 4 | Nginx (8080) y Tomcat (8081) en el navegador |
-| 9 | `09_resultado_final.png` | Resultados | Resultado final con los dos servidores funcionando |
