@@ -28,11 +28,11 @@ sudo apt update
 sudo apt install apache2 -y && sudo systemctl status apache2
 ```
 
-![Instalación de Apache](capturas_configuracion/01-instalacion-apache.png)
+![Instalación de Apache](<capturas_configuracion/1.png>)
 
 El servicio queda activo (`active (running)`) con la versión Apache 2.4.58.
 
-![Estado del servicio apache2](capturas_configuracion/02-estado-apache.png)
+![Estado del servicio apache2](<capturas_configuracion/salida1.png>)
 
 ### Creación de la página web
 
@@ -45,7 +45,7 @@ cd sergio
 sudo nano index.html
 ```
 
-![Carpeta del sitio e index.html](capturas_configuracion/03-carpeta-index.png)
+![Carpeta del sitio e index.html](<capturas_configuracion/2.png>)
 
 ### Configuración del VirtualHost
 
@@ -57,7 +57,7 @@ sudo cp 000-default.conf sergio.conf
 sudo nano sergio.conf
 ```
 
-![Copia de 000-default.conf](capturas_configuracion/04-copia-default-conf.png)
+![Copia de 000-default.conf](<capturas_configuracion/3.png>)
 
 | Directiva | Valor | Función |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ sudo nano sergio.conf
 | DocumentRoot | /var/www/sergio | Carpeta de la web |
 | ServerName | sergio.example.com | Dominio del sitio |
 
-![Directivas de sergio.conf](capturas_configuracion/05-directivas-sergio-conf.png)
+![Directivas de sergio.conf](<capturas_configuracion/3salidafichero.png>)
 
 ### Activación del VirtualHost
 
@@ -77,15 +77,15 @@ sudo apache2ctl configtest
 sudo systemctl reload apache2
 ```
 
-![Activación del sitio](capturas_configuracion/06-activacion-sitio.png)
+![Activación del sitio](<capturas_configuracion/4.png>)
 
 Como el dominio no es real, se añade a `/etc/hosts` apuntando a `127.0.0.1`:
 
-![Línea añadida en /etc/hosts](capturas_configuracion/07-etc-hosts.png)
+![Línea añadida en /etc/hosts](<capturas_configuracion/5.png>)
 
 La web se muestra en `http://sergio.example.com`:
 
-![Página personalizada](capturas_configuracion/08-pagina-personalizada.png)
+![Página personalizada](<capturas_configuracion/6.png>)
 
 ### Control de acceso
 
@@ -98,7 +98,7 @@ sudo apt install apache2-utils -y
 sudo htpasswd -Bc /etc/apache2/.htpasswd sergio
 ```
 
-![Instalación de apache2-utils y creación del usuario](capturas_configuracion/09-apache2-utils-htpasswd.png)
+![Instalación de apache2-utils y creación del usuario](<capturas_configuracion/controlacceso1.png>)
 
 Al consultar el fichero, la contraseña aparece cifrada (empieza por `$2y$`, que corresponde a bcrypt):
 
@@ -106,7 +106,7 @@ Al consultar el fichero, la contraseña aparece cifrada (empieza por `$2y$`, que
 sudo cat /etc/apache2/.htpasswd
 ```
 
-![Fichero de contraseñas cifrado](capturas_configuracion/10-fichero-htpasswd.png)
+![Fichero de contraseñas cifrado](<capturas_configuracion/controlacceso1(contra).png>)
 
 **2. Creación de la zona privada.** Se crea la carpeta `privado` con su propio `index.html`, al que solo podrán acceder los usuarios registrados.
 
@@ -115,9 +115,9 @@ sudo mkdir /var/www/sergio/privado
 sudo nano /var/www/sergio/privado/index.html
 ```
 
-![Carpeta privado](capturas_configuracion/11-carpeta-privado.png)
+![Carpeta privado](<capturas_configuracion/controlacceso2.png>)
 
-![index.html de la zona privada](capturas_configuracion/12-index-privado.png)
+![index.html de la zona privada](<capturas_configuracion/controlacceso2(fichero).png>)
 
 **3. Protección en el VirtualHost.** Se añade un bloque `<Directory>` en `sergio.conf`:
 
@@ -137,7 +137,7 @@ sudo nano /var/www/sergio/privado/index.html
 | AuthUserFile | Fichero con los usuarios y las contraseñas |
 | Require valid-user | Solo deja pasar a los usuarios de ese fichero |
 
-![Bloque Directory en sergio.conf](capturas_configuracion/13-directory-sergio-conf.png)
+![Bloque Directory en sergio.conf](<capturas_configuracion/controlacceso3.png>)
 
 **4. Comprobación y recarga.** Se comprueba la configuración y se recarga Apache:
 
@@ -146,21 +146,21 @@ sudo apache2ctl configtest
 sudo systemctl reload apache2
 ```
 
-![Comprobación de la configuración y recarga de Apache](capturas_configuracion/14-configtest-reload.png)
+![Comprobación de la configuración y recarga de Apache](<capturas_configuracion/controlacceso4.png>)
 
 **5. Pruebas.** Al entrar en `http://sergio.example.com/privado`, el navegador pide usuario y contraseña:
 
-![Login con el usuario sergio](capturas_configuracion/15-login-sergio.png)
+![Login con el usuario sergio](<capturas_configuracion/controlacceso5.png>)
 
 Con las credenciales correctas se muestra la zona privada:
 
-![Zona privada](capturas_configuracion/16-zona-privada.png)
+![Zona privada](<capturas_configuracion/controlacceso5(prueba).png>)
 
 Con un usuario que no está registrado en el fichero, Apache deniega el acceso con el error **401 Unauthorized**:
 
-![Login con un usuario no registrado](capturas_configuracion/17-login-usuario-no-registrado.png)
+![Login con un usuario no registrado](<capturas_configuracion/usuariosincorrectoprueba.png>)
 
-![Error 401 Unauthorized](capturas_configuracion/18-error-401.png)
+![Error 401 Unauthorized](<capturas_configuracion/usuariosincorrectoprueba1.png>)
 
 ### Problemas surgidos
 
@@ -170,8 +170,6 @@ Con un usuario que no está registrado en el fichero, Apache deniega el acceso c
 | La web no cargaba desde la carpeta correcta. | `DocumentRoot` escrito como `/var/www/Sergio`; Linux distingue mayúsculas. | Corregir la ruta a `/var/www/sergio`. |
 | Aviso AH00558 al comprobar la configuración. | No hay un `ServerName` global. Es solo un aviso. | Opcional: definir `ServerName localhost` con `a2enconf`. |
 | `systemctl reload` fallaba. | Se ejecutó sin `sudo`. | Ejecutarlo con `sudo`. |
-
-![Problema: «Index of /» vacío](capturas_configuracion/19-problema-index-of.png)
 
 ## Banco de pruebas
 
